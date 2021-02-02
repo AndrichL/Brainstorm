@@ -10,16 +10,16 @@ namespace MyNamespace
     {
         private void Update()
         {
-            // if (Input.GetKeyDown(KeyCode.A))
-            // {
-            //     Robin.ScoreManager.instance.AddToScore(100);
-            // }
+            if (InputSystem.GetDevice<Keyboard>().aKey.wasPressedThisFrame)
+            {
+                Robin.ScoreManager.instance.AddToScore(100);
+            }
         }
         
         public void TestInput(InputAction.CallbackContext something)
         {
-            if(something.performed)
-                Robin.ScoreManager.instance.AddToScore(100);
+            // if(something.performed)
+            //     Robin.ScoreManager.instance.AddToScore(100);
         }
     }
 }
