@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace Robin
 {
+    // Just to make sure this script always initialized before any subscribers
+    [DefaultExecutionOrder(-10)]
     public class EventManager : MonoBehaviour
     {
         public static EventManager instance;
