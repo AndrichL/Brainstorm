@@ -1,5 +1,5 @@
 {
-    "name": "Input master",
+    "name": "Inputmaster",
     "maps": [
         {
             "name": "Player",
@@ -69,6 +69,33 @@
                     "action": "Movment",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Debug",
+            "id": "992de2ce-7910-446e-8d1e-aa0e297ab38e",
+            "actions": [
+                {
+                    "name": "ButtonPressA",
+                    "type": "Button",
+                    "id": "09317a6f-4c45-404e-91ac-fb08e297cdcf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2d4a13a1-2e6d-47a4-a36d-136f847e5b86",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonPressA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

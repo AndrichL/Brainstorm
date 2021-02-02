@@ -84,6 +84,33 @@ public class @Inputmaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Debug"",
+            ""id"": ""992de2ce-7910-446e-8d1e-aa0e297ab38e"",
+            ""actions"": [
+                {
+                    ""name"": ""ButtonPressA"",
+                    ""type"": ""Button"",
+                    ""id"": ""09317a6f-4c45-404e-91ac-fb08e297cdcf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2d4a13a1-2e6d-47a4-a36d-136f847e5b86"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ButtonPressA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -91,6 +118,9 @@ public class @Inputmaster : IInputActionCollection, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movment = m_Player.FindAction("Movment", throwIfNotFound: true);
+        // Debug
+        m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
+        m_Debug_ButtonPressA = m_Debug.FindAction("ButtonPressA", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -169,8 +199,45 @@ public class @Inputmaster : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Debug
+    private readonly InputActionMap m_Debug;
+    private IDebugActions m_DebugActionsCallbackInterface;
+    private readonly InputAction m_Debug_ButtonPressA;
+    public struct DebugActions
+    {
+        private @Inputmaster m_Wrapper;
+        public DebugActions(@Inputmaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ButtonPressA => m_Wrapper.m_Debug_ButtonPressA;
+        public InputActionMap Get() { return m_Wrapper.m_Debug; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DebugActions set) { return set.Get(); }
+        public void SetCallbacks(IDebugActions instance)
+        {
+            if (m_Wrapper.m_DebugActionsCallbackInterface != null)
+            {
+                @ButtonPressA.started -= m_Wrapper.m_DebugActionsCallbackInterface.OnButtonPressA;
+                @ButtonPressA.performed -= m_Wrapper.m_DebugActionsCallbackInterface.OnButtonPressA;
+                @ButtonPressA.canceled -= m_Wrapper.m_DebugActionsCallbackInterface.OnButtonPressA;
+            }
+            m_Wrapper.m_DebugActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ButtonPressA.started += instance.OnButtonPressA;
+                @ButtonPressA.performed += instance.OnButtonPressA;
+                @ButtonPressA.canceled += instance.OnButtonPressA;
+            }
+        }
+    }
+    public DebugActions @Debug => new DebugActions(this);
     public interface IPlayerActions
     {
         void OnMovment(InputAction.CallbackContext context);
+    }
+    public interface IDebugActions
+    {
+        void OnButtonPressA(InputAction.CallbackContext context);
     }
 }
