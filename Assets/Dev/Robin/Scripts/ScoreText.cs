@@ -8,7 +8,7 @@ namespace Robin
 {
     public class ScoreText : MonoBehaviour
     {
-        private TextMeshProUGUI scoreText;
+        private TMP_Text scoreText;
 
         private void OnEnable()
         {
@@ -22,7 +22,7 @@ namespace Robin
 
         private void Start()
         {
-            scoreText = GetComponent<TextMeshProUGUI>();
+            scoreText = GetComponent<TMP_Text>();
         }
 
         private void OnScoreUpdate(int score)
