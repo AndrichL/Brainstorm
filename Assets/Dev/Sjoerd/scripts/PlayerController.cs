@@ -8,14 +8,16 @@ namespace Sjoerd
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] float speed;
+        [SerializeField] int maxDistance;
 
         public Inputmaster controls;
-        private Vector3 adToMovment;
+        [SerializeField] private Vector3 adToMovment;
+        private Vector3 playerStartingPos;
 
         private void Awake()
         {
             controls = new Inputmaster();
-
+            playerStartingPos = transform.position;
         }      
         public void MovmentInputInfo(InputAction.CallbackContext ctx )
         {
@@ -27,9 +29,12 @@ namespace Sjoerd
         }
         private void Movment()
         {
-            transform.position = transform.position + adToMovment;
-        }
-        
+            if (transform.position.x < playerStartingPos.x + maxDistance && adToMovment.x >= 0)
+                transform.position = transform.position + adToMovment;
+
+            if (transform.position.x > playerStartingPos.x - maxDistance && adToMovment.x <= 0)
+                transform.position = transform.position + adToMovment;
+        }       
         private void OnEnable()
         {
             controls.Enable();
