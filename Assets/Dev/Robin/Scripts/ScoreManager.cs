@@ -23,13 +23,13 @@ namespace Robin
         public void AddToScore(int scoreAmount)
         {
             currentScore += scoreAmount;
-            Robin.EventManager.instance.BroadcastOnScoreUpdate(currentScore);
+            EventManager.instance.BroadcastOnScoreUpdate(currentScore);
         }
 
         public void ResetScore()
         {
             currentScore = 0;
-            Robin.EventManager.instance.BroadcastOnScoreUpdate(currentScore);
+            EventManager.instance.BroadcastOnScoreUpdate(currentScore);
         }
     }
 }

@@ -33,12 +33,12 @@ namespace Robin
 
         private void OnEnable()
         {
-            Robin.EventManager.instance.onPlayerAliveStateChange += OnPlayerAliveStateChange;
+            EventManager.instance.onPlayerAliveStateChange += OnPlayerAliveStateChange;
         }
 
         private void OnDisable()
         {
-            Robin.EventManager.instance.onPlayerAliveStateChange -= OnPlayerAliveStateChange;
+            EventManager.instance.onPlayerAliveStateChange -= OnPlayerAliveStateChange;
         }
 
         private void Start()

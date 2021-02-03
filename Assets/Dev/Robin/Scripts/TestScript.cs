@@ -12,7 +12,7 @@ namespace Robin
         {
             if (InputSystem.GetDevice<Keyboard>().fKey.wasPressedThisFrame)
             {
-                Robin.EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
+                EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
             }
         }
         

@@ -12,12 +12,12 @@ namespace Robin
 
         private void OnEnable()
         {
-            Robin.EventManager.instance.onScoreUpdate += OnScoreUpdate;
+            EventManager.instance.onScoreUpdate += OnScoreUpdate;
         }
 
         private void OnDisable()
         {
-            Robin.EventManager.instance.onScoreUpdate -= OnScoreUpdate;
+            EventManager.instance.onScoreUpdate -= OnScoreUpdate;
         }
 
         private void Start()
