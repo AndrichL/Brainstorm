@@ -37,6 +37,10 @@ namespace Sjoerd
         public void MovmentInputInfo(InputAction.CallbackContext ctx)
         {
             movementInfo = ctx.ReadValue<Vector2>();
+            if(ctx.canceled)
+            {
+                movementInfo = Vector2.zero;
+            }
         }
     }
 }

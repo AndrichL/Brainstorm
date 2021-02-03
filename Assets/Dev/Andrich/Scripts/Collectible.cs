@@ -38,12 +38,12 @@ namespace Andrich
                 {
                     if(GameManager.m_Instance.GetCurrentPlayer() == null)
                     {
-                        Debug.Log("No current player");
+                        Debug.LogError("No current player");
                         return;
                     }
                     GameManager.m_Instance.GetCurrentPlayer().ChangePlayerVitality(-m_Settings.m_DamageAmount);
 
-                    Debug.Log("Brain hit the gorund");
+                    //Debug.Log("Brain hit the gorund");
                 }
             }
 

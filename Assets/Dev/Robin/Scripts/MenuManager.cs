@@ -116,7 +116,7 @@ namespace Robin
 
         public void Restart()
         {
-            // do something here   
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void BackToMainMenu()

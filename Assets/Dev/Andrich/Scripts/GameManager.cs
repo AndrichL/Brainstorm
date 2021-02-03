@@ -12,9 +12,6 @@ namespace Andrich
         public static GameManager m_Instance { get; private set; }
         private Player m_CurrentPlayer;
 
-        [Header("UI")]
-        [SerializeField] private GameObject m_GameOverUI;
-
         private void OnEnable()
         {
             EventManager.instance.onDeathAnimationFinished += OnDeathAnimationFinished;
@@ -35,24 +32,8 @@ namespace Andrich
             {
                 Destroy(this);
             }
-        }
 
-        private void Start()
-        {
-            m_GameOverUI.SetActive(false);
             Time.timeScale = 1;
-            if (SceneManager.GetActiveScene().buildIndex != 0)
-            {
-                //Restart();
-            }
-        }
-
-        private void Restart()
-        {
-            if(m_CurrentPlayer == null)
-            {
-                m_CurrentPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            }
         }
 
         public void CurrentPlayer(GameObject player)
@@ -67,9 +48,8 @@ namespace Andrich
 
         public void GameIsOver(GameObject player)
         {
-            Time.timeScale = 0;
-            Debug.Log("Game is over!");
-
+            Time.timeScale = 0f;
+            //Debug.Log("Game is over!");
             
             StartCoroutine(GameOver(player));
         }
@@ -78,25 +58,22 @@ namespace Andrich
         {
             EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
 
-            yield return new WaitForSecondsRealtime(2f);
+            float animationLength = player.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length * Time.unscaledTime;
+            yield return new WaitForSecondsRealtime(animationLength);
 
             if (player == null)
             {
                 player = m_CurrentPlayer.gameObject;
             }
             player.SetActive(false);
+
         }
 
         private void OnDeathAnimationFinished()
         {
-            EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
             m_CurrentPlayer.gameObject.SetActive(false);
+            EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
             MenuManager.instance.ShowGameOverMenu();
-        }
-
-        public void RestartScene()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
