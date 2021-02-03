@@ -53,17 +53,19 @@ namespace Robin
 
         public void ShowMainMenu()
         {
+            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.MainMenu);
+            
             mainMenu.SetActive(true);
             optionsMenu.SetActive(false);
             gameOverMenu.SetActive(false);
             pauseMenu.SetActive(false);
             highscoreMenu.SetActive(false);
-            
-            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.MainMenu);
         }
         
         public void ShowPauseMenu()
         {
+            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.InGameMenu);
+            
             mainMenu.SetActive(false);
             optionsMenu.SetActive(false);
             gameOverMenu.SetActive(false);
@@ -82,6 +84,8 @@ namespace Robin
 
         public void ShowGameOverMenu()
         {
+            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameOver);
+            
             mainMenu.SetActive(false);
             optionsMenu.SetActive(false);
             gameOverMenu.SetActive(true);
