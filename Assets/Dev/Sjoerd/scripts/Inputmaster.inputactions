@@ -1,5 +1,5 @@
 {
-    "name": "Input master",
+    "name": "Inputmaster",
     "maps": [
         {
             "name": "Player",
@@ -60,9 +60,31 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "left",
+                    "id": "e726eabb-8b9d-4f93-b7dc-a0833262c19d",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "right",
                     "id": "0f2964d2-319f-4572-b3af-d91b5207c1c2",
                     "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "af72d139-b55b-454f-8e5a-20a2752816f5",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
