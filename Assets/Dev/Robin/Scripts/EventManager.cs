@@ -28,8 +28,9 @@ namespace Robin
 
         // PLAYER ALIVE STATE CHANGE
         public Action<bool> onPlayerAliveStateChange;
-        public void OnPlayerAliveStateChange(bool playerAlive)
+        public void BroadcastOnPlayerAliveStateChange(bool playerAlive)
         {
+            Debug.Log("PlayerAlive: " + playerAlive);
             onPlayerAliveStateChange?.Invoke(playerAlive);
         }
         
@@ -38,6 +39,7 @@ namespace Robin
         public void BroadcastOnDeathAnimationFinished()
         {
             Debug.Log("Animation Finished");
+            BroadcastOnPlayerAliveStateChange(true);
             onDeathAnimationFinished?.Invoke();
         }
 

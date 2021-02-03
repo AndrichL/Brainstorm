@@ -10,9 +10,9 @@ namespace Robin
     {
         private void Update()
         {
-            if (InputSystem.GetDevice<Keyboard>().aKey.wasPressedThisFrame)
+            if (InputSystem.GetDevice<Keyboard>().fKey.wasPressedThisFrame)
             {
-                Robin.EventManager.instance.OnPlayerAliveStateChange(false);
+                Robin.EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
             }
         }
         
