@@ -12,6 +12,9 @@ namespace Andrich
         public static GameManager m_Instance { get; private set; }
         private Player m_CurrentPlayer;
 
+        [Header("UI")]
+        [SerializeField] private GameObject m_GameOverUI;
+
         private void OnEnable()
         {
             EventManager.instance.onDeathAnimationFinished += OnDeathAnimationFinished;
@@ -36,6 +39,7 @@ namespace Andrich
 
         private void Start()
         {
+            m_GameOverUI.SetActive(false);
             Time.timeScale = 1;
             if (SceneManager.GetActiveScene().buildIndex != 0)
             {
@@ -85,7 +89,14 @@ namespace Andrich
 
         private void OnDeathAnimationFinished()
         {
-            
+            EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
+            m_CurrentPlayer.gameObject.SetActive(false);
+            m_GameOverUI.SetActive(true);
+        }
+
+        public void RestartScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

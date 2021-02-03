@@ -39,36 +39,42 @@ namespace Robin
             EventManager.instance.onHurtPlayer -= OnHurtPlayer;
         }
 
-        private void Start()
+        private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _playerController = GetComponent<PlayerController>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _animator.updateMode = AnimatorUpdateMode.Normal;
+            PlayerIsAlive = true;
         }
 
         private void Update()
         {
-            Vector2 movementVector = _playerController.MovmentInfo;
-
-            if (movementVector.x != 0)
+            if(PlayerIsAlive)
             {
-                _animator.SetBool("isWalking", true);
-            }
-            else
-            {
-                _animator.SetBool("isWalking", false);
-            }
+                Vector2 movementVector = _playerController.MovmentInfo;
 
-            if (movementVector.x > 0)
-                RightDirection = true;
+                if (movementVector.x != 0)
+                {
+                    _animator.SetBool("isWalking", true);
+                }
+                else
+                {
+                    _animator.SetBool("isWalking", false);
+                }
+
+                if (movementVector.x > 0)
+                    RightDirection = true;
             
-            if(movementVector.x < 0)
-                RightDirection = false;
+                if(movementVector.x < 0)
+                    RightDirection = false;
+            }
         }
 
         private void KillPlayer()
         {
+            _animator.updateMode = AnimatorUpdateMode.UnscaledTime;
             _animator.SetTrigger("KillPlayer");
             PlayerIsAlive = false;
         }

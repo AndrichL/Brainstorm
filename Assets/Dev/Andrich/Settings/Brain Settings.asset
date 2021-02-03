@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Brain Settings
   m_EditorClassIdentifier: 
   m_WhichCollectible: 0
-  m_PointsAmount: 50
+  m_PointsAmount: 100
   m_HealAmount: 0
   m_DamageAmount: 1

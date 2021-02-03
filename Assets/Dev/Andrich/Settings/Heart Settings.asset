@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Heart Settings
   m_EditorClassIdentifier: 
   m_WhichCollectible: 1
-  m_PointsAmount: 100
+  m_PointsAmount: 50
   m_HealAmount: 1
   m_DamageAmount: 0

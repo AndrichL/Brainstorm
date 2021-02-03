@@ -73,30 +73,28 @@ namespace Andrich
             if (m_Spawnpoints[m_CurrentSpawnpoint].activeSelf) // If the spawnpoint is active
             {
                 m_Spawnpoints[m_CurrentSpawnpoint].SetActive(false); // Turn off the spawnpoint in the hierarchy
-                ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.brain, spawnPos.position, Quaternion.identity); // Set the chosen prefab active in the hierarchy
+                SpawnItem(spawnPos);
             }
 
             m_PreviousSpawnpoint = m_CurrentSpawnpoint; // Set previous spawnpoint
             StartCoroutine(SpawnTimer());
         }
 
-        private void SpawnItem()
+        private void SpawnItem(Transform spawnPos)
         {
             int randomNumber = UnityEngine.Random.Range(0, 20);
-            if (randomNumber > 12)
+
+            if (randomNumber >= 16 && !m_FirstSpawn)
             {
-                if (randomNumber >= 18 && !m_FirstSpawn)
-                {
-                    ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.anvil, transform.position, Quaternion.identity);
-                }
-                else if (randomNumber == 17 && GameManager.m_Instance.GetCurrentPlayer().GetIfPlayerIsHurt() && !m_FirstSpawn)
-                {
-                    ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.heart, transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.brain, transform.position, Quaternion.identity);
-                }
+                ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.anvil, spawnPos.position, Quaternion.identity);
+            }
+            else if (randomNumber == 17 && GameManager.m_Instance.GetCurrentPlayer().GetIfPlayerIsHurt() && !m_FirstSpawn)
+            {
+                ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.heart, spawnPos.position, Quaternion.identity);
+            }
+            else
+            {
+                ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.brain, spawnPos.position, Quaternion.identity);
             }
         }
     }
