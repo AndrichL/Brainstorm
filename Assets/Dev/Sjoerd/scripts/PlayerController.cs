@@ -8,17 +8,14 @@ namespace Sjoerd
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] float speed;
-        [SerializeField] int maxDistance;
-
-        [SerializeField] private Vector2 movmentInfo;
-        private Vector3 playerStartingPos;
-        private Rigidbody2D rb;
-        private BoxCollider2D box;
         [SerializeField] private Vector2 baseMovelimit;
+        [SerializeField] private Vector2 movmentInfo;
+
+        private Rigidbody2D rb;
+        private BoxCollider2D box;        
 
         private void Awake()
         {
-            playerStartingPos = transform.position;
             rb = GetComponent<Rigidbody2D>();
             box = GetComponent<BoxCollider2D>();
         }      
