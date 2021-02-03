@@ -7,29 +7,33 @@ namespace Sjoerd
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] float speed;
+
         public Inputmaster controls;
-        private Vector3 movment;
+        private Vector3 adToMovment;
 
         private void Awake()
         {
             controls = new Inputmaster();
-            controls.Player.Movment.performed += ctx => Movment(ctx.ReadValue<float>());
-        }
 
-        void Movment(float direction)
+        }      
+        public void MovmentInputInfo(InputAction.CallbackContext ctx )
         {
-            movment.x = direction;
+            adToMovment = ctx.ReadValue<Vector2>() * speed * Time.deltaTime;
         }
         private void Update()
         {
-            gameObject.transform.position = gameObject.transform.position + movment;
+            Movment();
         }
-
+        private void Movment()
+        {
+            transform.position = transform.position + adToMovment;
+        }
+        
         private void OnEnable()
         {
             controls.Enable();
         }
-
         private void OnDisable()
         {
             controls.Disable();
