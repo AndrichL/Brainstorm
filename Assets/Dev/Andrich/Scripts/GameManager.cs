@@ -1,3 +1,4 @@
+using System;
 using Robin;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,16 @@ namespace Andrich
     {
         public static GameManager m_Instance { get; private set; }
         private Player m_CurrentPlayer;
+
+        private void OnEnable()
+        {
+            EventManager.instance.onDeathAnimationFinished += OnDeathAnimationFinished;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.instance.onDeathAnimationFinished -= OnDeathAnimationFinished;
+        }
 
         private void Awake()
         {
@@ -70,6 +81,11 @@ namespace Andrich
                 player = m_CurrentPlayer.gameObject;
             }
             player.SetActive(false);
+        }
+
+        private void OnDeathAnimationFinished()
+        {
+            
         }
     }
 }
