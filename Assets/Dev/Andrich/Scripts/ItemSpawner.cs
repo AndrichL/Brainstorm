@@ -79,6 +79,26 @@ namespace Andrich
             m_PreviousSpawnpoint = m_CurrentSpawnpoint; // Set previous spawnpoint
             StartCoroutine(SpawnTimer());
         }
+
+        private void SpawnItem()
+        {
+            int randomNumber = UnityEngine.Random.Range(0, 20);
+            if (randomNumber > 12)
+            {
+                if (randomNumber >= 18 && !m_FirstSpawn)
+                {
+                    ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.anvil, transform.position, Quaternion.identity);
+                }
+                else if (randomNumber == 17 && GameManager.m_Instance.GetCurrentPlayer().GetIfPlayerIsHurt() && !m_FirstSpawn)
+                {
+                    ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.heart, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.brain, transform.position, Quaternion.identity);
+                }
+            }
+        }
     }
 }
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6274757142743123221}
   - component: {fileID: 8232388726283766358}
   m_Layer: 6
-  m_Name: Brain
+  m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd239484579f67b48b6ad1bccbc81f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Settings: {fileID: 11400000, guid: f6bc5aa7cfce88f4d85bfb4530fe1765, type: 2}
+  m_Settings: {fileID: 11400000, guid: bc96b66054c4d714a828da1bf4f42b15, type: 2}
 --- !u!212 &8896643066040708410
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.6886792, g: 0.39640304, b: 0.10005337, a: 1}
+  m_Color: {r: 1, g: 0.09811318, b: 0.41561067, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

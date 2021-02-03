@@ -9,6 +9,8 @@ namespace Andrich
     public enum WhichPrefab
     { 
         brain,
+        anvil,
+        heart
     }
 
     public class ObjectPooler : MonoBehaviour
@@ -67,10 +69,6 @@ namespace Andrich
             }
 
             m_ObjectToSetActive = m_PoolDictionary[prefabEnum].Dequeue();
-            if(m_ObjectToSetActive.activeSelf)
-            {
-                IncreasePool(prefabEnum);
-            }
 
             m_ObjectToSetActive.SetActive(true);
             m_ObjectToSetActive.transform.position = position;
@@ -79,11 +77,6 @@ namespace Andrich
             m_PoolDictionary[prefabEnum].Enqueue(m_ObjectToSetActive);
 
             return m_ObjectToSetActive;
-        }
-
-        private void IncreasePool(WhichPrefab prefabEnum)
-        {
-            
         }
     }
 }
