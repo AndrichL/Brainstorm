@@ -10,6 +10,7 @@ namespace Sjoerd
         [SerializeField] float speed;
         [SerializeField] private Vector2 baseMovelimit;
         [SerializeField] private Vector2 movmentInfo;
+        public Vector2 MovmentInfo => movmentInfo;
 
         private Rigidbody2D rb;
         private BoxCollider2D box;        
