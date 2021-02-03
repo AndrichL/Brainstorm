@@ -8,35 +8,31 @@ namespace Sjoerd
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] float speed;
+        [SerializeField] private Vector2 baseMovelimit;
+        [SerializeField] private Vector2 movmentInfo;
 
-        public Inputmaster controls;
-        private Vector3 adToMovment;
+        private Rigidbody2D rb;
+        private BoxCollider2D box;        
 
         private void Awake()
         {
-            controls = new Inputmaster();
-
+            rb = GetComponent<Rigidbody2D>();
+            box = GetComponent<BoxCollider2D>();
         }      
         public void MovmentInputInfo(InputAction.CallbackContext ctx )
         {
-            adToMovment = ctx.ReadValue<Vector2>() * speed * Time.deltaTime;
-        }
-        private void Update()
-        {
-            Movment();
+            movmentInfo = ctx.ReadValue<Vector2>();
         }
         private void Movment()
         {
-            transform.position = transform.position + adToMovment;
+            Vector2 moveLimet = baseMovelimit - (Vector2)box.bounds.size * 0.5f;
+            Vector2 newPos = rb.position + (movmentInfo * speed * Time.fixedDeltaTime);
+            newPos.x = Mathf.Clamp(newPos.x, -moveLimet.x, moveLimet.x);
+            rb.MovePosition(newPos);
         }
-        
-        private void OnEnable()
+        private void FixedUpdate()
         {
-            controls.Enable();
-        }
-        private void OnDisable()
-        {
-            controls.Disable();
+            Movment();
         }
     }
 }
