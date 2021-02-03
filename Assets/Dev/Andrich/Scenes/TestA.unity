@@ -2550,7 +2550,7 @@ MonoBehaviour:
   m_MinimumSpawnDelay: 0.3
   m_MaxSpawnDelay: 2.5
   m_DecreaseAmount: 0.15
-  m_TimeUntilIncreaseSpeed: 10
+  m_TimeUntilIncreaseSpeed: 8
 --- !u!4 &1566564890
 Transform:
   m_ObjectHideFlags: 0
