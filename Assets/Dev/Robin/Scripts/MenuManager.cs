@@ -75,6 +75,8 @@ namespace Robin
         
         public void ShowOptionsMenu()
         {
+            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.InGameMenu);
+            
             mainMenu.SetActive(false);
             optionsMenu.SetActive(true);
             gameOverMenu.SetActive(false);
