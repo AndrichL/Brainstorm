@@ -73,6 +73,15 @@ namespace Robin
             highscoreMenu.SetActive(false);
         }
         
+        public void ShowOptionsMenu()
+        {
+            mainMenu.SetActive(false);
+            optionsMenu.SetActive(true);
+            gameOverMenu.SetActive(false);
+            pauseMenu.SetActive(false);
+            highscoreMenu.SetActive(false);
+        }
+        
         public void CloseAllMenus()
         {
             mainMenu.SetActive(false);
@@ -95,9 +104,23 @@ namespace Robin
         
         public void StartGame()
         {
-            //SceneManager.LoadScene()
+            SceneManager.LoadScene(1);
         }
-        
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
+
+        public void Restart()
+        {
+            // do something here   
+        }
+
+        public void BackToMainMenu()
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
 
