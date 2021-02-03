@@ -30,7 +30,6 @@ namespace Robin
         public Action<bool> onPlayerAliveStateChange;
         public void BroadcastOnPlayerAliveStateChange(bool playerAlive)
         {
-            Debug.Log("PlayerAlive: " + playerAlive);
             onPlayerAliveStateChange?.Invoke(playerAlive);
         }
 
