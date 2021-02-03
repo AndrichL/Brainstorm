@@ -25,7 +25,22 @@ namespace Robin
         {
             onScoreUpdate?.Invoke(newScore);
         }
+
+        // PLAYER ALIVE STATE CHANGE
+        public Action<bool> onPlayerAliveStateChange;
+        public void OnPlayerAliveStateChange(bool playerAlive)
+        {
+            onPlayerAliveStateChange?.Invoke(playerAlive);
+        }
         
+        // DEATH ANIMATION FINISHED
+        public Action onDeathAnimationFinished;
+        public void BroadcastOnDeathAnimationFinished()
+        {
+            Debug.Log("Animation Finished");
+            onDeathAnimationFinished?.Invoke();
+        }
+
         // NEXT EVENT....
     }
 }

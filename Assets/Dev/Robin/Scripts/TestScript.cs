@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace MyNamespace
+namespace Robin
 {
     public class TestScript : MonoBehaviour
     {
@@ -12,7 +12,7 @@ namespace MyNamespace
         {
             if (InputSystem.GetDevice<Keyboard>().aKey.wasPressedThisFrame)
             {
-                Robin.ScoreManager.instance.AddToScore(100);
+                Robin.EventManager.instance.OnPlayerAliveStateChange(false);
             }
         }
         

@@ -14,6 +14,8 @@ namespace Robin
         private PlayerController _playerController;
         private SpriteRenderer _spriteRenderer;
 
+        private bool PlayerIsAlive;
+
         private bool _rightDirection;
 
         public bool RightDirection
@@ -27,6 +29,16 @@ namespace Robin
                 _spriteRenderer.flipX = value;
                 _rightDirection = value;
             } 
+        }
+
+        private void OnEnable()
+        {
+            Robin.EventManager.instance.onPlayerAliveStateChange += OnPlayerAliveStateChange;
+        }
+
+        private void OnDisable()
+        {
+            Robin.EventManager.instance.onPlayerAliveStateChange -= OnPlayerAliveStateChange;
         }
 
         private void Start()
@@ -57,19 +69,41 @@ namespace Robin
                 RightDirection = false;
         }
 
-        public void PlayerInput(InputAction.CallbackContext callbackContext)
+        private void KillPlayer()
         {
-            Vector2 movementInfo = callbackContext.ReadValue<Vector2>();
-            
-            Debug.Log(movementInfo);
-            
-            
+            _animator.SetTrigger("KillPlayer");
+            PlayerIsAlive = false;
         }
-        
-        private void FlipPlayer()
+
+        private void ResetAnimator()
         {
-            
+            _animator.SetTrigger("ResetAnimator");
+            PlayerIsAlive = true;
         }
+
+        private void OnPlayerAliveStateChange(bool playerAlive)
+        {
+            if (playerAlive)
+            {
+                ResetAnimator();
+            }
+            else
+            {
+                KillPlayer();
+            }
+        }
+
+        public void SendDeathAnimationFinished()
+        {
+            EventManager.instance.BroadcastOnDeathAnimationFinished();
+        }
+
+        // public void PlayerInput(InputAction.CallbackContext callbackContext)
+        // {
+        //     Vector2 movementInfo = callbackContext.ReadValue<Vector2>();
+        //     
+        //     Debug.Log(movementInfo);
+        // }
     }
 }
 
