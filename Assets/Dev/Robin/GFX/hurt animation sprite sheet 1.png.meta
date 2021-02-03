@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 4f2045bb0d4271944870745997c049f3
+guid: f21fa15e2f35f914a9603f190109af27
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1860142296729673523
-    second: walk animation sprite sheet stolen_0
+      213: -6725496110670029434
+    second: hurt animation sprite sheet 1_0
   - first:
-      213: -2643278875502428565
-    second: walk animation sprite sheet stolen_1
+      213: 5007109040845648997
+    second: hurt animation sprite sheet 1_1
   - first:
-      213: -3918156547170990457
-    second: walk animation sprite sheet stolen_2
+      213: -8640886465552031878
+    second: hurt animation sprite sheet 1_2
   - first:
-      213: -4467485745580505376
-    second: walk animation sprite sheet stolen_3
-  - first:
-      213: 6047194759284301874
-    second: walk animation sprite sheet stolen_4
-  - first:
-      213: 2342747356474444391
-    second: walk animation sprite sheet stolen_5
+      213: -4338137138911526827
+    second: hurt animation sprite sheet 1_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -55,7 +49,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -145,70 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk animation sprite sheet stolen_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33f504c309d80d910800000000000000
-      internalID: 1860142296729673523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk animation sprite sheet stolen_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6e326f0edf215bd0800000000000000
-      internalID: -2643278875502428565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk animation sprite sheet stolen_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 786808f2169ef99c0800000000000000
-      internalID: -3918156547170990457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk animation sprite sheet stolen_3
+      name: hurt animation sprite sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -222,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e68d87526d4002c0800000000000000
-      internalID: -4467485745580505376
+      spriteID: 68ddd39abec3aa2a0800000000000000
+      internalID: -6725496110670029434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk animation sprite sheet stolen_4
+      name: hurt animation sprite sheet 1_1
       rect:
         serializedVersion: 2
         x: 16
@@ -243,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 230aeba1893fbe350800000000000000
-      internalID: 6047194759284301874
+      spriteID: 5647043d423dc7540800000000000000
+      internalID: 5007109040845648997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk animation sprite sheet stolen_5
+      name: hurt animation sprite sheet 1_2
       rect:
         serializedVersion: 2
         x: 32
@@ -264,8 +195,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a052dee4c138020800000000000000
-      internalID: 2342747356474444391
+      spriteID: a7f5a4c7a87651880800000000000000
+      internalID: -8640886465552031878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hurt animation sprite sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550cf30b147dbc3c0800000000000000
+      internalID: -4338137138911526827
       vertices: []
       indices: 
       edges: []
@@ -273,7 +225,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 82c2236a9ee65d747b472641a682b55e
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

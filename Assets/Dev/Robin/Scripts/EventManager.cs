@@ -33,13 +33,25 @@ namespace Robin
             Debug.Log("PlayerAlive: " + playerAlive);
             onPlayerAliveStateChange?.Invoke(playerAlive);
         }
+
+        // HURT PLAYER
+        public Action onHurtPlayer;
+        public void BroadcastOnHurtPlayer()
+        {
+            onHurtPlayer?.Invoke();
+        }
+        
+        // HURT ANIMATION FINISHED
+        public Action onHurtAnimationFinished;
+        public void BroadcastOnHurtAnimationFinished()
+        {
+            onHurtAnimationFinished?.Invoke();
+        }
         
         // DEATH ANIMATION FINISHED
         public Action onDeathAnimationFinished;
         public void BroadcastOnDeathAnimationFinished()
         {
-            Debug.Log("Animation Finished");
-            BroadcastOnPlayerAliveStateChange(true);
             onDeathAnimationFinished?.Invoke();
         }
 
