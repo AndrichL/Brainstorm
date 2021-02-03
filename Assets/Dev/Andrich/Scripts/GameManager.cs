@@ -91,7 +91,7 @@ namespace Andrich
         {
             EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
             m_CurrentPlayer.gameObject.SetActive(false);
-            m_GameOverUI.SetActive(true);
+            MenuManager.instance.ShowGameOverMenu();
         }
 
         public void RestartScene()
