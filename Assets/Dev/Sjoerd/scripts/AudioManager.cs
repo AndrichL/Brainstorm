@@ -25,7 +25,7 @@ namespace Sjoerd
                 Destroy(gameObject);
             }
 
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
 
             foreach (Sound s in sounds)
             {
