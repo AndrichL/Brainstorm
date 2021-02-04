@@ -100,6 +100,7 @@ namespace Robin
         
         public void CloseAllMenus()
         {
+            Time.timeScale = 1f;
             mainMenu.SetActive(false);
             optionsMenu.SetActive(false);
             gameOverMenu.SetActive(false);
