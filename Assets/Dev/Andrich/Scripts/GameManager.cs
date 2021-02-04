@@ -75,5 +75,11 @@ namespace Andrich
             EventManager.instance.BroadcastOnPlayerAliveStateChange(false);
             MenuManager.instance.ShowGameOverMenu();
         }
+
+        public IEnumerator DeactivateItem(GameObject item, float time)
+        {
+            yield return new WaitForSeconds(time);
+            item.SetActive(false);
+        }
     }
 }

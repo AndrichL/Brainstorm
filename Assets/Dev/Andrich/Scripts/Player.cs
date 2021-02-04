@@ -52,7 +52,6 @@ namespace Andrich
 
             if (m_Health <= 0 && !m_IsDead)
             {
-                //Debug.Log("Player is dead");
                 KillPlayer();
             }
         }
@@ -99,10 +98,6 @@ namespace Andrich
             m_IsInvincible = true;
             Robin.EventManager.instance.BroadcastOnHurtPlayer();
 
-            //float animationLength = m_Animator.GetCurrentAnimatorClipInfo(0)[0].clip.length * Time.unscaledDeltaTime;
-            //timeInvincible = animationLength;
-
-            //Debug.Log(animationLength);
             yield return new WaitForSeconds(timeInvincible);
 
             m_SpriteRenderer.color = new Color(1f, 1f, 1f, 1f);

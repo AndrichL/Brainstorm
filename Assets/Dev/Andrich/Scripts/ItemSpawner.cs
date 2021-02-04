@@ -80,10 +80,10 @@ namespace Andrich
             yield return new WaitForSeconds(m_SpawnCountdown); // Wait x amount of time
 
             m_SpawnCountdown = m_CurrentSpawnDelay;
-            SpawnCollectible();
+            SpawnItem();
         }
 
-        private void SpawnCollectible()
+        private void SpawnItem()
         {
 
             int side = Random.Range(-4, 5);
