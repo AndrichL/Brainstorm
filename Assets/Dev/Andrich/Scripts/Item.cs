@@ -10,14 +10,12 @@ namespace Andrich
         [SerializeField] private CollectibleSettings m_Settings;
         private Animator m_Animator;
         private Rigidbody2D m_Rigidbody;
-        private Sjoerd.AudioManager AudioManager;
         private bool m_AllowCollision;
 
         private void Awake()
         {
             m_Animator = GetComponent<Animator>();
             m_Rigidbody = GetComponent<Rigidbody2D>();
-            AudioManager = FindObjectOfType<Sjoerd.AudioManager>();
         }
 
         private void OnEnable()
@@ -31,7 +29,7 @@ namespace Andrich
             {
                 if(m_Rigidbody.position.y < -3.1f)
                 {
-                    AudioManager.Play("Anvil");
+                    Sjoerd.AudioManager.thisAudioManager.Play("Anvil");
                     m_Animator.SetBool("HitGround", true);
                     m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
                     GameManager.m_Instance.DeactivateItem(gameObject, m_Settings.m_AnimationLength);
@@ -59,13 +57,13 @@ namespace Andrich
                     switch (m_Settings.m_WhichItem)
                     {
                         case WhichCollectible.brain:
-                            AudioManager.Play("Catch");
+                            Sjoerd.AudioManager.thisAudioManager.Play("Catch");
 
                             gameObject.SetActive(false);
 
                             break;
                         case WhichCollectible.heart:
-                            AudioManager.Play("1up");
+                            Sjoerd.AudioManager.thisAudioManager.Play("1up");
 
                             player.ChangePlayerVitality(m_Settings.m_HealAmount);
                             gameObject.SetActive(false);
@@ -91,14 +89,14 @@ namespace Andrich
                     switch (m_Settings.m_WhichItem)
                     {
                         case WhichCollectible.brain:
-                            AudioManager.Play("Drop");
+                            Sjoerd.AudioManager.thisAudioManager.Play("Drop");
 
                             HurtPlayer(player);
 
                             break;
                         case WhichCollectible.heart:
 
-                            AudioManager.Play("Drop");
+                            Sjoerd.AudioManager.thisAudioManager.Play("Drop");
 
                             break;
                         default:
@@ -126,7 +124,7 @@ namespace Andrich
                 }
             }
 
-            AudioManager.Play("Grunt");
+            Sjoerd.AudioManager.thisAudioManager.Play("Grunt");
 
             player.ChangePlayerVitality(-m_Settings.m_DamageAmount);
         }
