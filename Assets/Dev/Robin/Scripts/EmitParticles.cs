@@ -9,7 +9,7 @@ namespace Robin
         [SerializeField] private ParticleSystem _particleSystem;
 
 
-        public void EmitDustCloudLeft()
+        public void EmitDustCloud()
         {
             _particleSystem.Emit(9);
         }
