@@ -43,6 +43,9 @@ namespace Robin
                 InputSystem.GetDevice<Keyboard>().pKey.wasPressedThisFrame ||
                 InputSystem.GetDevice<Keyboard>().pauseKey.wasPressedThisFrame)
             {
+
+                Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
                 switch (GameStateManager.instance.CurrentGameState)
                 {
                     case GameStateManager.GameState.MainMenu:
@@ -68,6 +71,8 @@ namespace Robin
 
         public void ShowMainMenu()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
             GameStateManager.instance.ChangeGameState(GameStateManager.GameState.MainMenu);
             
             mainMenu.SetActive(true);
@@ -79,6 +84,7 @@ namespace Robin
         
         public void ShowPauseMenu()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
 
             GameStateManager.instance.ChangeGameState(GameStateManager.GameState.InGameMenu);
             
@@ -91,6 +97,8 @@ namespace Robin
         
         public void ShowOptionsMenu()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
             GameStateManager.instance.ChangeGameState(GameStateManager.GameState.InGameMenu);
             
             mainMenu.SetActive(false);
@@ -103,6 +111,12 @@ namespace Robin
         public void CloseAllMenus()
         {
             Time.timeScale = 1f;
+
+            Robin.GameStateManager.instance.ChangeGameState(GameStateManager.instance.LastGameState);
+
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+            Sjoerd.AudioManager.thisAudioManager.UnPause("OST");
+
             mainMenu.SetActive(false);
             optionsMenu.SetActive(false);
             gameOverMenu.SetActive(false);
@@ -112,6 +126,8 @@ namespace Robin
 
         public void ShowGameOverMenu()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
             mainMenu.SetActive(false);
             optionsMenu.SetActive(false);
             gameOverMenu.SetActive(true);
@@ -121,6 +137,8 @@ namespace Robin
         
         public void ShowHighscoreMenu()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
             mainMenu.SetActive(false);
             optionsMenu.SetActive(false);
             gameOverMenu.SetActive(false);
@@ -130,6 +148,8 @@ namespace Robin
         
         public void StartGame()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
             Sjoerd.AudioManager.thisAudioManager.Stop("menuOST");
             Sjoerd.AudioManager.thisAudioManager.Play("OST");
             GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
@@ -138,16 +158,25 @@ namespace Robin
 
         public void QuitGame()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
             Application.Quit();
         }
 
         public void Restart()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void BackToMainMenu()
         {
+            Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
+            Sjoerd.AudioManager.thisAudioManager.Stop("OST");
+            Sjoerd.AudioManager.thisAudioManager.Play("menuOST");
+
             SceneManager.LoadScene("Menu");
         }
 

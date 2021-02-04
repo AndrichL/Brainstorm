@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Anvil Settings
   m_EditorClassIdentifier: 
   m_WhichItem: 2
-  m_PointsAmount: -50
+  m_PointsAmount: 0
   m_HealAmount: 0
   m_DamageAmount: 1
   m_AnimationLength: 1.3

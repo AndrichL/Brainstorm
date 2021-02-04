@@ -23,19 +23,12 @@ namespace Sjoerd
 
         private void Start()
         {
-            Sjoerd.AudioManager.thisAudioManager.Play("Footsteps");
+            AudioManager.thisAudioManager.Play("footsteps");
         }
 
         private void Update()
         {
-            if(movementInfo != Vector2.zero)
-            {
-                AudioManager.thisAudioManager.UnPause("Footsteps");
-            }
-            else
-            {
-                AudioManager.thisAudioManager.Pause("Footsteps");
-            }
+            WalkingSound();   
         }
 
         private void FixedUpdate()
@@ -50,6 +43,25 @@ namespace Sjoerd
             newPos.x = Mathf.Clamp(newPos.x, -moveLimit, moveLimit);
 
             rb.MovePosition(newPos);
+        }
+
+        private void WalkingSound()
+        {
+            if (Robin.GameStateManager.instance.CurrentGameState == Robin.GameStateManager.GameState.GameLoop)
+            {
+                if (movementInfo != Vector2.zero)
+                {
+                    AudioManager.thisAudioManager.UnPause("footsteps");
+                }
+                else
+                {
+                    AudioManager.thisAudioManager.Pause("footsteps");
+                }
+            }
+            else
+            {
+                AudioManager.thisAudioManager.Pause("footsteps");
+            }
         }
 
         public void MovmentInputInfo(InputAction.CallbackContext ctx)
