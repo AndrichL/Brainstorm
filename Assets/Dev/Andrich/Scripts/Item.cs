@@ -27,7 +27,7 @@ namespace Andrich
         {
             if(m_Settings.m_WhichItem == WhichCollectible.anvil)
             {
-                if(m_Rigidbody.position.y < -3.1f)
+                if(m_Rigidbody.position.y < -2.9f)
                 {
                     Sjoerd.AudioManager.thisAudioManager.Play("Anvil");
                     m_Animator.SetBool("HitGround", true);
@@ -36,6 +36,7 @@ namespace Andrich
                 }
             }
         }
+
         private void ResetItem()
         {
             m_Animator.SetBool("HitGround", false);
@@ -63,9 +64,9 @@ namespace Andrich
 
                             break;
                         case WhichCollectible.heart:
-                            Sjoerd.AudioManager.thisAudioManager.Play("1up");
 
                             player.ChangePlayerVitality(m_Settings.m_HealAmount);
+                            Sjoerd.AudioManager.thisAudioManager.Play("1up");
                             gameObject.SetActive(false);
 
                             break;

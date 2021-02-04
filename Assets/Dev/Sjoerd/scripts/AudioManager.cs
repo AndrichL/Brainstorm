@@ -40,7 +40,7 @@ namespace Sjoerd
         {
             if(SceneManager.GetActiveScene().buildIndex == 0) // Menu scene
             {
-                Play("MenuOST");
+                Play("menuOST");
             }
             else if(SceneManager.GetActiveScene().buildIndex == 1)
             {

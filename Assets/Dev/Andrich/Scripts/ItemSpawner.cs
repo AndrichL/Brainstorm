@@ -128,7 +128,7 @@ namespace Andrich
             {
                 ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.anvil, spawnPos.position, Quaternion.identity);
             }
-            else if (randomNumber > 98 && GameManager.m_Instance.GetCurrentPlayer().GetIfPlayerIsHurt() && !m_FirstSpawn)
+            else if (randomNumber > 95 && GameManager.m_Instance.GetCurrentPlayer().GetIfPlayerIsHurt() && !m_FirstSpawn)
             {
                 ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.heart, spawnPos.position, Quaternion.identity);
             }
