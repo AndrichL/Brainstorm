@@ -17,6 +17,18 @@ namespace Robin
         public GameObject pauseMenu;
         public GameObject highscoreMenu;
 
+        private void OnEnable()
+        {
+            GameStateManager.instance.onChangeGameState += OnGameStateChange;
+            EventManager.instance.onDeathAnimationFinished += OnDeathAnimationFinished;
+        }
+
+        private void OnDisable()
+        {
+            GameStateManager.instance.onChangeGameState -= OnGameStateChange;
+            EventManager.instance.onDeathAnimationFinished -= OnDeathAnimationFinished;
+        }
+
         private void Awake()
         {
             if (instance == null)
@@ -95,8 +107,6 @@ namespace Robin
 
         public void ShowGameOverMenu()
         {
-            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameOver);
-            
             mainMenu.SetActive(false);
             optionsMenu.SetActive(false);
             gameOverMenu.SetActive(true);
@@ -122,6 +132,19 @@ namespace Robin
         public void BackToMainMenu()
         {
             SceneManager.LoadScene(0);
+        }
+
+        private void OnGameStateChange(GameStateManager.GameState newState)
+        {
+            
+        }
+
+        private void OnDeathAnimationFinished()
+        {
+            if (GameStateManager.instance.CurrentGameState == GameStateManager.GameState.GameOver)
+            {
+                ShowGameOverMenu();
+            }
         }
     }
 }
