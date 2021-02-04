@@ -60,17 +60,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "e726eabb-8b9d-4f93-b7dc-a0833262c19d",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movment",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "right",
                     "id": "0f2964d2-319f-4572-b3af-d91b5207c1c2",
                     "path": "<Keyboard>/d",
@@ -78,17 +67,6 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "af72d139-b55b-454f-8e5a-20a2752816f5",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movment",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -148,8 +126,8 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Gamepad Stick",
-                    "id": "1a944346-2233-48d9-8f41-0cd5a130e524",
+                    "name": "Gamepad D-Pad",
+                    "id": "52253740-249f-49dc-9610-2ab8c077297c",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -160,8 +138,8 @@
                 },
                 {
                     "name": "up",
-                    "id": "3ada6e76-7068-4407-bd7b-63441924f781",
-                    "path": "<Gamepad>/leftStick/up",
+                    "id": "d1012195-74c1-43bb-b8b8-48fb15ede109",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -171,8 +149,8 @@
                 },
                 {
                     "name": "down",
-                    "id": "284140ae-643c-4dbb-b6f9-506265611ccd",
-                    "path": "<Gamepad>/leftStick/down",
+                    "id": "952c26ff-7510-4995-ae6e-c6283afada46",
+                    "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -182,8 +160,8 @@
                 },
                 {
                     "name": "left",
-                    "id": "df9be051-10f6-49b1-b366-e3e5b5ec746e",
-                    "path": "<Gamepad>/leftStick/left",
+                    "id": "ee88193c-e406-4de9-9494-c356ba65476f",
+                    "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -193,8 +171,8 @@
                 },
                 {
                     "name": "right",
-                    "id": "2fec455d-b2f2-47b1-a20c-13c424bfe917",
-                    "path": "<Gamepad>/leftStick/right",
+                    "id": "2673e80e-0f9f-4811-9196-5ab99b881238",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -203,7 +181,117 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Gamepad D-Pad",
+                    "name": "Switch Pro D-Pad",
+                    "id": "cf4a0037-4c95-4b78-b71c-1ac9f7bb8b87",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "02ae9e42-8315-4aca-98f4-02fa60c09b11",
+                    "path": "<SwitchProControllerHID>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Switch Pro",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "535ca3cb-9bde-48aa-803d-bc8ecfa39518",
+                    "path": "<SwitchProControllerHID>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Switch Pro",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "5f15988a-207d-4897-801d-4d04f810293c",
+                    "path": "<SwitchProControllerHID>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Switch Pro",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "2131aeaa-0828-4560-b72d-27d0b8bc9f52",
+                    "path": "<SwitchProControllerHID>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Switch Pro",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "PS4 D-Pad",
+                    "id": "fe56b744-0be0-43b6-ac63-75f02967940b",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "133954b7-feeb-49dd-96f7-632b945b6f56",
+                    "path": "<DualShockGamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "814d0dc6-6b18-4a55-b9dd-5f81f9eba785",
+                    "path": "<DualShockGamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "a7b01d20-b9cc-4fa9-a905-055277bd75d5",
+                    "path": "<DualShockGamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "cb538c90-8a04-4060-bc21-e5070516e84b",
+                    "path": "<DualShockGamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Xbox D-Pad",
                     "id": "c475ef96-2939-4787-83c5-0d390ba3086b",
                     "path": "2DVector",
                     "interactions": "",
@@ -216,7 +304,249 @@
                 {
                     "name": "up",
                     "id": "381d59e9-a0e4-465a-af09-f46eec86c415",
-                    "path": "<Gamepad>/dpad/up",
+                    "path": "<XInputController>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "26842f9a-b3e0-4530-ad7f-4be88225c332",
+                    "path": "<XInputController>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "6729d18c-d055-407e-b328-45ecd136bc54",
+                    "path": "<XInputController>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "0d25a604-879c-42e8-9b8d-0def69c7b4e1",
+                    "path": "<XInputController>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "e726eabb-8b9d-4f93-b7dc-a0833262c19d",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "af72d139-b55b-454f-8e5a-20a2752816f5",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movment",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Xbox Stick",
+                    "id": "1a944346-2233-48d9-8f41-0cd5a130e524",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "3ada6e76-7068-4407-bd7b-63441924f781",
+                    "path": "<XInputController>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "284140ae-643c-4dbb-b6f9-506265611ccd",
+                    "path": "<XInputController>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "df9be051-10f6-49b1-b366-e3e5b5ec746e",
+                    "path": "<XInputController>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "2fec455d-b2f2-47b1-a20c-13c424bfe917",
+                    "path": "<XInputController>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "PS4 Stick",
+                    "id": "a71c6217-cbbc-426e-bd44-475f80963b86",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "8a4b686b-0b06-4e75-83ca-8de35ad730cf",
+                    "path": "<DualShockGamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "4ccaef9f-c19c-4f5b-8033-91be410eee18",
+                    "path": "<DualShockGamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "f2a4334d-255d-42fa-92a1-252efe9aa53a",
+                    "path": "<DualShockGamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "b01d4ace-51c6-46bc-b9f8-883b60d0234d",
+                    "path": "<DualShockGamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PS4",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Switch Pro Stick",
+                    "id": "6c9e3edb-fa7c-4743-b6f3-aff80dce6683",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "1b7a40af-8340-4044-a8f5-511cd85a9b51",
+                    "path": "<SwitchProControllerHID>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Switch Pro",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "922cd68e-84c9-451d-b997-a333b57f747c",
+                    "path": "<SwitchProControllerHID>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Switch Pro",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "bbdf5846-58d2-4ff7-bef7-3f6786af1f38",
+                    "path": "<SwitchProControllerHID>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Switch Pro",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "52ccc3f9-5e36-45a3-aab1-c0562056b4e1",
+                    "path": "<SwitchProControllerHID>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Switch Pro",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Gamepad Stick",
+                    "id": "3fb86f5b-0388-4cee-8da3-106c94798a25",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "d8debe4d-3969-4580-872d-b97728cca299",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -226,8 +556,8 @@
                 },
                 {
                     "name": "down",
-                    "id": "26842f9a-b3e0-4530-ad7f-4be88225c332",
-                    "path": "<Gamepad>/dpad/down",
+                    "id": "5a50d88f-1a6f-420b-b868-044056a94eea",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -237,8 +567,8 @@
                 },
                 {
                     "name": "left",
-                    "id": "6729d18c-d055-407e-b328-45ecd136bc54",
-                    "path": "<Gamepad>/dpad/left",
+                    "id": "c4c98e9e-200f-49ea-ae52-068be5486a94",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -248,8 +578,8 @@
                 },
                 {
                     "name": "right",
-                    "id": "0d25a604-879c-42e8-9b8d-0def69c7b4e1",
-                    "path": "<Gamepad>/dpad/right",
+                    "id": "e2b16645-80fd-487e-aafe-70214fada91e",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -278,6 +608,39 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Xbox",
+            "bindingGroup": "Xbox",
+            "devices": [
+                {
+                    "devicePath": "<XInputController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "PS4",
+            "bindingGroup": "PS4",
+            "devices": [
+                {
+                    "devicePath": "<DualShockGamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Switch Pro",
+            "bindingGroup": "Switch Pro",
+            "devices": [
+                {
+                    "devicePath": "<SwitchProControllerHID>",
                     "isOptional": false,
                     "isOR": false
                 }

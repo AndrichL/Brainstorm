@@ -49,7 +49,7 @@ namespace Sjoerd
         {
             if (Robin.GameStateManager.instance.CurrentGameState == Robin.GameStateManager.GameState.GameLoop)
             {
-                if (movementInfo != Vector2.zero)
+                if (movementInfo.x != 0)
                 {
                     AudioManager.thisAudioManager.UnPause("footsteps");
                 }
