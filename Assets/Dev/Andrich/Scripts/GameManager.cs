@@ -49,6 +49,7 @@ namespace Andrich
         public void GameIsOver(GameObject player)
         {
             Time.timeScale = 0f;
+            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameOver);
             //Debug.Log("Game is over!");
             
             StartCoroutine(GameOver(player));
@@ -76,7 +77,12 @@ namespace Andrich
             MenuManager.instance.ShowGameOverMenu();
         }
 
-        public IEnumerator DeactivateItem(GameObject item, float time)
+        public void DeactivateItem(GameObject item, float time)
+        {
+            StartCoroutine(DeactivateTimer(item, time));
+        }
+
+        private IEnumerator DeactivateTimer(GameObject item, float time)
         {
             yield return new WaitForSeconds(time);
             item.SetActive(false);

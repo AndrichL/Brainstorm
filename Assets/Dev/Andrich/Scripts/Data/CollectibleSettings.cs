@@ -19,5 +19,6 @@ namespace Andrich
         public int m_PointsAmount = 100;
         public int m_HealAmount = 1;
         public int m_DamageAmount = 1;
+        public float m_AnimationLength;
     }
 }

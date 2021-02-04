@@ -51,12 +51,13 @@ namespace Robin
                         break;
                     
                     case GameStateManager.GameState.GameLoop:
-                        
+                        Time.timeScale = 0f;
                         ShowPauseMenu();
                         break;
                     
                     case GameStateManager.GameState.InGameMenu:
-                        
+                        Time.timeScale = 1f;
+                        GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
                         CloseAllMenus();
                         break;
                 }
@@ -76,6 +77,7 @@ namespace Robin
         
         public void ShowPauseMenu()
         {
+
             GameStateManager.instance.ChangeGameState(GameStateManager.GameState.InGameMenu);
             
             mainMenu.SetActive(false);
