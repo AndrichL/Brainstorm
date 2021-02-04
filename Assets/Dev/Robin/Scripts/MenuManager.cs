@@ -168,7 +168,10 @@ namespace Robin
 
         public void Restart()
         {
+
             Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
+            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
