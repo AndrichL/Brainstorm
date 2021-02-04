@@ -7,6 +7,10 @@ namespace Sjoerd
 {
     public class AudioManager : MonoBehaviour
     {
+        public AudioMixerGroup mainGroep;
+        public AudioMixerGroup musicGroep;
+        public AudioMixerGroup SFXGroep;
+
         public Sound[] sounds;
 
         public static AudioManager thisAudioManager;
@@ -106,6 +110,21 @@ namespace Sjoerd
             {
                 s.source.UnPause();
             }
+        }
+
+        public void SetVolumeMain(float Volume)
+        {
+            mainGroep.audioMixer.SetFloat("volume", Volume);
+        }
+
+        public void SetVolumeMusic(float Volume)
+        {
+            musicGroep.audioMixer.SetFloat("volumeMusic", Volume);
+        }
+
+        public void SetVolumeaSFX(float Volume)
+        {
+            SFXGroep.audioMixer.SetFloat("volumeSFX", Volume);
         }
     }
 }
