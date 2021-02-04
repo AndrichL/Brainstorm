@@ -52,6 +52,9 @@ namespace Robin
 
         private void Update()
         {
+            if(GameStateManager.instance.CurrentGameState != GameStateManager.GameState.GameLoop)
+                return;
+                
             if(PlayerIsAlive)
             {
                 Vector2 movementVector = _playerController.MovmentInfo;

@@ -15,6 +15,16 @@ namespace Robin
         private void Start()
         {
             _playerAnimation = GetComponent<PlayerAnimation>();
+            
+            foreach (Transform child in transform) 
+            {
+                if (child.name == "LeftShadow")
+                    leftShadow = child.gameObject;
+                
+
+                if (child.name == "RightShadow")
+                    rightShadow = child.gameObject;
+            }
         }
 
         private void Update()
