@@ -98,3 +98,9 @@ MonoBehaviour:
     volume: 1
     loop: 1
     source: {fileID: 0}
+  - name: footsteps
+    Clip: {fileID: 8300000, guid: 2337e4c5ed846594fb3cb743eb277b13, type: 3}
+    audioMixer: {fileID: 4265885865209553517, guid: 6b6329f94f8b2fc43a2f1ba025f3d108, type: 2}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
