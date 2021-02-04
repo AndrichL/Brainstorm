@@ -130,7 +130,7 @@ namespace Robin
         
         public void StartGame()
         {
-            Sjoerd.AudioManager.thisAudioManager.Stop("MenuOST");
+            Sjoerd.AudioManager.thisAudioManager.Stop("menuOST");
             Sjoerd.AudioManager.thisAudioManager.Play("OST");
             GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
             SceneManager.LoadScene("Game");

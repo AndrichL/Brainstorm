@@ -551,21 +551,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5058845429706545196, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5058845429706545202, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 5058845429706545202, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 5058845429902514509, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.0024414062
+      propertyPath: m_AnchoredPosition.y
+      value: -38.711914
       objectReference: {fileID: 0}
     - target: {fileID: 5058845430088741456, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
       propertyPath: m_RootOrder
@@ -616,24 +604,20 @@ PrefabInstance:
       value: MenuManager
       objectReference: {fileID: 0}
     - target: {fileID: 5058845430376875761, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.011230469
+      propertyPath: m_AnchoredPosition.y
+      value: -38.711914
       objectReference: {fileID: 0}
     - target: {fileID: 5058845430390287956, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.015625
+      propertyPath: m_AnchoredPosition.y
+      value: -38.711914
       objectReference: {fileID: 0}
     - target: {fileID: 5058845430409676629, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0012207031
+      value: -0.0014648438
       objectReference: {fileID: 0}
-    - target: {fileID: 5058845431651296769, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5058845431651296771, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
-      propertyPath: m_Layer
-      value: 5
+    - target: {fileID: 5058845430409676629, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -38.710938
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
