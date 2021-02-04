@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 namespace Sjoerd
 {
@@ -30,8 +31,22 @@ namespace Sjoerd
                 s.source.loop = s.loop;
                 s.source.outputAudioMixerGroup = s.audioMixer;
             }
+
+            PlayBackgroundMusic();
         }
 
+
+        private void PlayBackgroundMusic()
+        {
+            if(SceneManager.GetActiveScene().buildIndex == 0) // Menu scene
+            {
+                Play("MenuOST");
+            }
+            else if(SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                Play("OST");
+            }
+        }
 
         //start to play audio
         public void Play(string name)

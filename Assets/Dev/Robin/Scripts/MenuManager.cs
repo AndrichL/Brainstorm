@@ -52,11 +52,13 @@ namespace Robin
                     
                     case GameStateManager.GameState.GameLoop:
                         Time.timeScale = 0f;
+                        Sjoerd.AudioManager.thisAudioManager.Pause("OST");
                         ShowPauseMenu();
                         break;
                     
                     case GameStateManager.GameState.InGameMenu:
                         Time.timeScale = 1f;
+                        Sjoerd.AudioManager.thisAudioManager.UnPause("OST");
                         GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
                         CloseAllMenus();
                         break;
@@ -119,6 +121,8 @@ namespace Robin
         
         public void StartGame()
         {
+            Sjoerd.AudioManager.thisAudioManager.Stop("MenuOST");
+            Sjoerd.AudioManager.thisAudioManager.Play("OST");
             GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
             SceneManager.LoadScene("Game");
         }

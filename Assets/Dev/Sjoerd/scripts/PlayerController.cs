@@ -20,6 +20,24 @@ namespace Sjoerd
             rb = GetComponent<Rigidbody2D>();
             box = GetComponent<BoxCollider2D>();
         }
+
+        private void Start()
+        {
+            Sjoerd.AudioManager.thisAudioManager.Play("Footsteps");
+        }
+
+        private void Update()
+        {
+            if(movementInfo != Vector2.zero)
+            {
+                Sjoerd.AudioManager.thisAudioManager.UnPause("Footsteps");
+            }
+            else
+            {
+                Sjoerd.AudioManager.thisAudioManager.Pause("Footsteps");
+            }
+        }
+
         private void FixedUpdate()
         {
             Movement();
