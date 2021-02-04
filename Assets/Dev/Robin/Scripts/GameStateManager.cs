@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Robin
 {
+    [DefaultExecutionOrder(-8)]
     public class GameStateManager : MonoBehaviour
     {
         public static GameStateManager instance;

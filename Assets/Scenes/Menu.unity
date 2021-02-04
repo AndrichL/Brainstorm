@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9158968505289324918, guid: 775c422cb1b40704584275c0798107c3, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9158968505289324918, guid: 775c422cb1b40704584275c0798107c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -365,7 +365,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4763064165834832660, guid: 1170339266b002b4fb4263a6304d8631, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4763064165834832660, guid: 1170339266b002b4fb4263a6304d8631, type: 3}
       propertyPath: m_LocalPosition.x
@@ -420,9 +420,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5058845429706545196, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5058845430088741456, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5058845430088741456, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
       propertyPath: m_LocalPosition.x
@@ -467,6 +471,14 @@ PrefabInstance:
     - target: {fileID: 5058845430088741459, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
       propertyPath: m_Name
       value: MenuManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058845431651296769, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058845431651296771, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f43ab5cde369ccf4ba12ce0d91092092, type: 3}
