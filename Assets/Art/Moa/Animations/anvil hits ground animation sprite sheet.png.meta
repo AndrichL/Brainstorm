@@ -1,55 +1,43 @@
 fileFormatVersion: 2
-guid: 97c3dd1e45ac1874d8b9615499689ca9
+guid: dd7263c2e7486d84cbef8ac82811b79b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5584290457748370662
-    second: death animation sprite sheet stolen_0
+      213: -5488364810957630047
+    second: anvil hits ground animation sprite sheet_0
   - first:
-      213: 4811841145590369719
-    second: death animation sprite sheet stolen_1
+      213: 4231179628962394984
+    second: anvil hits ground animation sprite sheet_1
   - first:
-      213: -2851099125553675119
-    second: death animation sprite sheet stolen_2
+      213: -8934440243367704804
+    second: anvil hits ground animation sprite sheet_2
   - first:
-      213: 6678416921725510421
-    second: death animation sprite sheet stolen_3
+      213: 7421463685728820288
+    second: anvil hits ground animation sprite sheet_3
   - first:
-      213: 1357980407502032649
-    second: death animation sprite sheet stolen_4
+      213: -723152286985813612
+    second: anvil hits ground animation sprite sheet_4
   - first:
-      213: 3393380275193455367
-    second: death animation sprite sheet stolen_5
+      213: -7958679243894057207
+    second: anvil hits ground animation sprite sheet_5
   - first:
-      213: 4765188646411047462
-    second: death animation sprite sheet stolen_6
+      213: 3356145745020370380
+    second: anvil hits ground animation sprite sheet_6
   - first:
-      213: 5624223213405052516
-    second: death animation sprite sheet stolen_7
+      213: -5689985714948741543
+    second: anvil hits ground animation sprite sheet_7
   - first:
-      213: 8641264723516094623
-    second: death animation sprite sheet stolen_8
+      213: 5628399127894579200
+    second: anvil hits ground animation sprite sheet_8
   - first:
-      213: 9105334581780105106
-    second: death animation sprite sheet stolen_9
+      213: -5953317215468642440
+    second: anvil hits ground animation sprite sheet_9
   - first:
-      213: 2928931511197552260
-    second: death animation sprite sheet stolen_10
+      213: -7038711518167285915
+    second: anvil hits ground animation sprite sheet_10
   - first:
-      213: -3147410285030959340
-    second: death animation sprite sheet stolen_11
-  - first:
-      213: 7610238190433259635
-    second: death animation sprite sheet stolen_12
-  - first:
-      213: -7868224301180972830
-    second: death animation sprite sheet stolen_13
-  - first:
-      213: 4284901512162470615
-    second: death animation sprite sheet stolen_14
-  - first:
-      213: 303740709224349341
-    second: death animation sprite sheet stolen_15
+      213: -6046754985599777498
+    second: anvil hits ground animation sprite sheet_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,7 +73,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -94,7 +82,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -175,91 +163,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e4f1b0a5926f7d40800000000000000
-      internalID: 5584290457748370662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: death animation sprite sheet stolen_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7bdc586170817c240800000000000000
-      internalID: 4811841145590369719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: death animation sprite sheet stolen_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19442f9737cde68d0800000000000000
-      internalID: -2851099125553675119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: death animation sprite sheet stolen_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51328697ec08eac50800000000000000
-      internalID: 6678416921725510421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: death animation sprite sheet stolen_4
+      name: anvil hits ground animation sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -273,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90f49195cf388d210800000000000000
-      internalID: 1357980407502032649
+      spriteID: 1a5dd15784965d3b0800000000000000
+      internalID: -5488364810957630047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_5
+      name: anvil hits ground animation sprite sheet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -294,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70329b2a165b71f20800000000000000
-      internalID: 3393380275193455367
+      spriteID: 8633c2d647b28ba30800000000000000
+      internalID: 4231179628962394984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_6
+      name: anvil hits ground animation sprite sheet_2
       rect:
         serializedVersion: 2
         x: 32
@@ -315,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6221e0da3d9512240800000000000000
-      internalID: 4765188646411047462
+      spriteID: c170d137fed720480800000000000000
+      internalID: -8934440243367704804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_7
+      name: anvil hits ground animation sprite sheet_3
       rect:
         serializedVersion: 2
         x: 48
@@ -336,14 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46e9384d6314d0e40800000000000000
-      internalID: 5624223213405052516
+      spriteID: 04cd35dc6e55ef660800000000000000
+      internalID: 7421463685728820288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_8
+      name: anvil hits ground animation sprite sheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -357,14 +261,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f987a4f8b70fbe770800000000000000
-      internalID: 8641264723516094623
+      spriteID: 49103bf83d8d6f5f0800000000000000
+      internalID: -723152286985813612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_9
+      name: anvil hits ground animation sprite sheet_5
       rect:
         serializedVersion: 2
         x: 16
@@ -378,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 297451c5f85ac5e70800000000000000
-      internalID: 9105334581780105106
+      spriteID: 9079b6205671d8190800000000000000
+      internalID: -7958679243894057207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_10
+      name: anvil hits ground animation sprite sheet_6
       rect:
         serializedVersion: 2
         x: 32
@@ -399,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48ec068f0b7a5a820800000000000000
-      internalID: 2928931511197552260
+      spriteID: ccdb06206cc639e20800000000000000
+      internalID: 3356145745020370380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_11
+      name: anvil hits ground animation sprite sheet_7
       rect:
         serializedVersion: 2
         x: 48
@@ -420,14 +324,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 417915e75072254d0800000000000000
-      internalID: -3147410285030959340
+      spriteID: 956ee6b932c1901b0800000000000000
+      internalID: -5689985714948741543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_12
+      name: anvil hits ground animation sprite sheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -441,14 +345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 370d2ec305ffc9960800000000000000
-      internalID: 7610238190433259635
+      spriteID: 0085640bf271c1e40800000000000000
+      internalID: 5628399127894579200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_13
+      name: anvil hits ground animation sprite sheet_9
       rect:
         serializedVersion: 2
         x: 16
@@ -462,14 +366,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e0130b8fa37ec290800000000000000
-      internalID: -7868224301180972830
+      spriteID: 87f16c8d881916da0800000000000000
+      internalID: -5953317215468642440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_14
+      name: anvil hits ground animation sprite sheet_10
       rect:
         serializedVersion: 2
         x: 32
@@ -483,14 +387,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7da6af11937077b30800000000000000
-      internalID: 4284901512162470615
+      spriteID: 56f303bba29715e90800000000000000
+      internalID: -7038711518167285915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: death animation sprite sheet stolen_15
+      name: anvil hits ground animation sprite sheet_11
       rect:
         serializedVersion: 2
         x: 48
@@ -504,8 +408,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9e7425d09a173400800000000000000
-      internalID: 303740709224349341
+      spriteID: 625c08fa06c951ca0800000000000000
+      internalID: -6046754985599777498
       vertices: []
       indices: 
       edges: []
@@ -513,7 +417,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e618dfb4dd48a1d4ca1038deb7c3dd0b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

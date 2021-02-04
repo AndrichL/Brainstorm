@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 4f2045bb0d4271944870745997c049f3
+guid: 3041d570b3b3c3e40a499cc3f141bcc9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1860142296729673523
-    second: walk animation sprite sheet stolen_0
+      213: 3206775867346476440
+    second: heart pickup hits ground animation sprite sheet_0
   - first:
-      213: -2643278875502428565
-    second: walk animation sprite sheet stolen_1
+      213: -7037730427460137592
+    second: heart pickup hits ground animation sprite sheet_1
   - first:
-      213: -3918156547170990457
-    second: walk animation sprite sheet stolen_2
+      213: 1106306844121875384
+    second: heart pickup hits ground animation sprite sheet_2
   - first:
-      213: -4467485745580505376
-    second: walk animation sprite sheet stolen_3
+      213: 2866925578065472919
+    second: heart pickup hits ground animation sprite sheet_3
   - first:
-      213: 6047194759284301874
-    second: walk animation sprite sheet stolen_4
-  - first:
-      213: 2342747356474444391
-    second: walk animation sprite sheet stolen_5
+      213: 3004325961614190470
+    second: heart pickup hits ground animation sprite sheet_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -55,7 +52,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -64,7 +61,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -145,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk animation sprite sheet stolen_0
+      name: heart pickup hits ground animation sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33f504c309d80d910800000000000000
-      internalID: 1860142296729673523
+      spriteID: 89d5b7f39a1c08c20800000000000000
+      internalID: 3206775867346476440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk animation sprite sheet stolen_1
+      name: heart pickup hits ground animation sprite sheet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -180,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6e326f0edf215bd0800000000000000
-      internalID: -2643278875502428565
+      spriteID: 88dc746b675f45e90800000000000000
+      internalID: -7037730427460137592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk animation sprite sheet stolen_2
+      name: heart pickup hits ground animation sprite sheet_2
       rect:
         serializedVersion: 2
         x: 32
@@ -201,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 786808f2169ef99c0800000000000000
-      internalID: -3918156547170990457
+      spriteID: 8b3c77896346a5f00800000000000000
+      internalID: 1106306844121875384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk animation sprite sheet stolen_3
+      name: heart pickup hits ground animation sprite sheet_3
       rect:
         serializedVersion: 2
         x: 0
@@ -222,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e68d87526d4002c0800000000000000
-      internalID: -4467485745580505376
+      spriteID: 79de216af9d59c720800000000000000
+      internalID: 2866925578065472919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk animation sprite sheet stolen_4
+      name: heart pickup hits ground animation sprite sheet_4
       rect:
         serializedVersion: 2
         x: 16
@@ -243,29 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 230aeba1893fbe350800000000000000
-      internalID: 6047194759284301874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk animation sprite sheet stolen_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76a052dee4c138020800000000000000
-      internalID: 2342747356474444391
+      spriteID: 6876f736b8281b920800000000000000
+      internalID: 3004325961614190470
       vertices: []
       indices: 
       edges: []
@@ -273,7 +249,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 82c2236a9ee65d747b472641a682b55e
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

@@ -12,12 +12,19 @@ namespace Andrich
         private int m_CurrentSpawnpoint; 
         private int m_PreviousSpawnpoint;
 
-        [SerializeField] private float m_SpawnDelay = 0.5f;
+        [SerializeField] private float m_MinimumSpawnDelay = 0.5f;
+        [SerializeField] private float m_MaxSpawnDelay = 10f;
+        [SerializeField] private float m_DecreaseAmount = 1f;
+        [SerializeField] private float m_TimeUntilIncreaseSpeed = 30f;
+        private float m_CurrentSpawnDelay;
+        private float m_SpawnSpeedCountdown;
+        private float m_SpawnCountdown;
         private bool m_FirstSpawn;
-
 
         private void Start()
         {
+            m_CurrentSpawnDelay = m_MaxSpawnDelay;
+
             if(m_Spawnpoints == null)
             {
                 Debug.LogError("No gameobjects have been added to the list!");
@@ -29,20 +36,56 @@ namespace Andrich
             }
         }
 
+        private void Update()
+        {
+            DecreaseSpawnDelay();
+        }
+
+        private void DecreaseSpawnDelay()
+        {
+            if(!m_FirstSpawn)
+            {
+                if(m_SpawnSpeedCountdown <= 0)
+                {
+                    m_SpawnSpeedCountdown = m_TimeUntilIncreaseSpeed;
+
+                    if(m_CurrentSpawnDelay < m_MaxSpawnDelay * 0.4f)
+                    {
+                        m_DecreaseAmount *= 0.5f;
+                        m_TimeUntilIncreaseSpeed *= 1.3f;
+                    }
+
+                    m_CurrentSpawnDelay = Mathf.Clamp(m_CurrentSpawnDelay - m_DecreaseAmount, m_MinimumSpawnDelay, m_MaxSpawnDelay);
+                }
+            }
+
+            m_SpawnSpeedCountdown = Mathf.Clamp(m_SpawnSpeedCountdown - Time.deltaTime, 0, m_TimeUntilIncreaseSpeed); ;
+        }
+
         private IEnumerator SpawnTimer()
         {
+            if(m_FirstSpawn)
+            {
+                m_SpawnSpeedCountdown = m_TimeUntilIncreaseSpeed;
+                m_SpawnCountdown = m_MaxSpawnDelay;
+            }
+
+            //float newDelay = m_CurrentSpawnDelay;
+
             foreach (GameObject spawnpoint in m_Spawnpoints)
             {
                 spawnpoint.SetActive(true); // Set each gameobject in the m_Spawnpoints list active
             }
 
-            yield return new WaitForSeconds(m_SpawnDelay); // Wait x amount of time
+            yield return new WaitForSeconds(m_SpawnCountdown); // Wait x amount of time
 
-            SpawnBrain();
+            m_SpawnCountdown = m_CurrentSpawnDelay;
+            SpawnCollectible();
         }
 
-        private void SpawnBrain()
+        private void SpawnCollectible()
         {
+
             int side = Random.Range(-4, 5);
             int increment = Random.Range(1, m_MaxIncrement);
             Transform spawnPos = null;
@@ -51,8 +94,6 @@ namespace Andrich
             {
                 m_CurrentSpawnpoint = Random.Range(0, m_Spawnpoints.Count - 1);
                 spawnPos = m_Spawnpoints[m_CurrentSpawnpoint].transform;
-
-                m_FirstSpawn = false;
             }
             else
             {
@@ -73,11 +114,34 @@ namespace Andrich
             if (m_Spawnpoints[m_CurrentSpawnpoint].activeSelf) // If the spawnpoint is active
             {
                 m_Spawnpoints[m_CurrentSpawnpoint].SetActive(false); // Turn off the spawnpoint in the hierarchy
-                ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.brain, spawnPos.position, Quaternion.identity); // Set the chosen prefab active in the hierarchy
+                SpawnItem(spawnPos);
             }
 
             m_PreviousSpawnpoint = m_CurrentSpawnpoint; // Set previous spawnpoint
             StartCoroutine(SpawnTimer());
+        }
+
+        private void SpawnItem(Transform spawnPos)
+        {
+            int randomNumber = UnityEngine.Random.Range(0, 100);
+
+            if (randomNumber < 15 && !m_FirstSpawn)
+            {
+                ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.anvil, spawnPos.position, Quaternion.identity);
+            }
+            else if (randomNumber > 98 && GameManager.m_Instance.GetCurrentPlayer().GetIfPlayerIsHurt() && !m_FirstSpawn)
+            {
+                ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.heart, spawnPos.position, Quaternion.identity);
+            }
+            else
+            {
+                ObjectPooler.m_Instance.SetActiveFromPool(WhichPrefab.brain, spawnPos.position, Quaternion.identity);
+            }
+
+            if(m_FirstSpawn)
+            {
+                m_FirstSpawn = false;
+            }
         }
     }
 }

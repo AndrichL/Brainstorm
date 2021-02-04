@@ -7,10 +7,10 @@ namespace Sjoerd
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] float speed;
-        [SerializeField] private Vector2 baseMovelimit;
-        [SerializeField] private Vector2 movmentInfo;
-        public Vector2 MovmentInfo => movmentInfo;
+        [SerializeField] float speed = 5;
+        [SerializeField] private float baseMovelimit = 5;
+        [SerializeField] private Vector2 movementInfo;
+        public Vector2 MovmentInfo => movementInfo;
 
         private Rigidbody2D rb;
         private BoxCollider2D box;        
@@ -20,23 +20,27 @@ namespace Sjoerd
             rb = GetComponent<Rigidbody2D>();
             box = GetComponent<BoxCollider2D>();
         }
-        
-        public void MovmentInputInfo(InputAction.CallbackContext ctx )
+        private void FixedUpdate()
         {
-            movmentInfo = ctx.ReadValue<Vector2>();
+            Movement();
         }
 
-        private void Movment()
+        private void Movement()
         {
-            Vector2 moveLimet = baseMovelimit - ((Vector2)box.bounds.size * 0.5f);
-            Vector2 newPos = rb.position + (movmentInfo * speed * Time.fixedDeltaTime);
-            newPos.x = Mathf.Clamp(newPos.x, -moveLimet.x, moveLimet.x);
+            float moveLimit = baseMovelimit - (box.bounds.size.x * 0.5f);
+            Vector2 newPos = rb.position + (movementInfo * speed * Time.fixedDeltaTime);
+            newPos.x = Mathf.Clamp(newPos.x, -moveLimit, moveLimit);
+
             rb.MovePosition(newPos);
         }
 
-        private void FixedUpdate()
+        public void MovmentInputInfo(InputAction.CallbackContext ctx)
         {
-            Movment();
+            movementInfo = ctx.ReadValue<Vector2>();
+            if(ctx.canceled)
+            {
+                movementInfo = Vector2.zero;
+            }
         }
     }
 }
