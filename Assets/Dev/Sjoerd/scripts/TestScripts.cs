@@ -14,9 +14,24 @@ namespace Sjoerd
         }
         private void Update()
         {
+            if (InputSystem.GetDevice<Keyboard>().iKey.wasPressedThisFrame)
+            {
+                audio.Play("OST");
+            }
+
             if (InputSystem.GetDevice<Keyboard>().kKey.wasPressedThisFrame)
             {
-                audio.Play("test");
+                audio.Pause("OST");
+            }
+
+            if (InputSystem.GetDevice<Keyboard>().lKey.wasPressedThisFrame)
+            {
+                audio.UnPause("OST");
+            }
+
+            if (InputSystem.GetDevice<Keyboard>().mKey.wasPressedThisFrame)
+            {
+                audio.Stop("OST");
             }
         }
     }

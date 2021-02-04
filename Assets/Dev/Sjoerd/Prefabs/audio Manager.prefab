@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4665144961166636527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4665144961166636525}
+  - component: {fileID: 4665144961166636524}
+  - component: {fileID: 4665144961166636514}
+  m_Layer: 0
+  m_Name: audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4665144961166636525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665144961166636527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4665144961166636524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665144961166636527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247ca38707a1c404f9f10a1adcd90ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: 1up
+    Clip: {fileID: 8300000, guid: 1dc87c99f4c2326449c24579fcc2802e, type: 3}
+    audioMixer: {fileID: 4265885865209553517, guid: 6b6329f94f8b2fc43a2f1ba025f3d108, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Anvil
+    Clip: {fileID: 8300000, guid: dd2734a0806004a4faa2262114d96ed8, type: 3}
+    audioMixer: {fileID: 4265885865209553517, guid: 6b6329f94f8b2fc43a2f1ba025f3d108, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Catch
+    Clip: {fileID: 8300000, guid: a279ee9e35928c44992bf0993d3a4e81, type: 3}
+    audioMixer: {fileID: 4265885865209553517, guid: 6b6329f94f8b2fc43a2f1ba025f3d108, type: 2}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Death
+    Clip: {fileID: 8300000, guid: be92e509f050d164ba2e16721f9c5361, type: 3}
+    audioMixer: {fileID: 4265885865209553517, guid: 6b6329f94f8b2fc43a2f1ba025f3d108, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Drop
+    Clip: {fileID: 8300000, guid: e3dee35b7bd946642ad3dc9bd422e054, type: 3}
+    audioMixer: {fileID: 4265885865209553517, guid: 6b6329f94f8b2fc43a2f1ba025f3d108, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Grunt
+    Clip: {fileID: 8300000, guid: 14c4760cb6a27fe448cc596e3ba4bca9, type: 3}
+    audioMixer: {fileID: 4265885865209553517, guid: 6b6329f94f8b2fc43a2f1ba025f3d108, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: OST
+    Clip: {fileID: 8300000, guid: ba806c5174d4e104f88dfc81f967f57b, type: 3}
+    audioMixer: {fileID: 812343229890041934, guid: 6b6329f94f8b2fc43a2f1ba025f3d108, type: 2}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+--- !u!114 &4665144961166636514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665144961166636527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d555ab74193b044b5ea20299f37d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

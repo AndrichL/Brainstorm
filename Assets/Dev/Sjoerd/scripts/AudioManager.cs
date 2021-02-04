@@ -8,9 +8,20 @@ namespace Sjoerd
     {
         public Sound[] sounds;
 
+
+        public static AudioManager thisAudioManager;
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);         
+            if(thisAudioManager == null)
+            {
+                thisAudioManager = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            DontDestroyOnLoad(gameObject);
 
             foreach (Sound s in sounds)
             {
@@ -32,7 +43,7 @@ namespace Sjoerd
             }
             else
             {
-                s.source.Play();                
+                s.source.Play();
             }
         }
 
@@ -41,7 +52,7 @@ namespace Sjoerd
             Sound s = Array.Find(sounds, sound => sound.name == name);
             if (s == null)
             {
-                Debug.LogWarning("Stop sound; " + name + "is not found");
+                Debug.LogWarning("Stop sound: " + name + "is not found");
                 return;
             }
             else
@@ -55,7 +66,7 @@ namespace Sjoerd
             Sound s = Array.Find(sounds, sound => sound.name == name);
             if (s == null)
             {
-                Debug.LogWarning("pause sound; " + name + "is not found");
+                Debug.LogWarning("pause sound: " + name + "is not found");
                 return;
             }
             else
@@ -64,6 +75,18 @@ namespace Sjoerd
             }
         }
 
-        
+        public void UnPause(string name)
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == name);
+            if (s == null)
+            {
+                Debug.LogWarning("unpause sound: " + name + "is not found");
+                return;
+            }
+            else
+            {
+                s.source.UnPause();
+            }
+        }
     }
 }
