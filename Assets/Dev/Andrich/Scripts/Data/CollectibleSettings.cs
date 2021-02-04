@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Andrich
 {
-    public enum WhichCollectible
+    public enum WhichItem
     {
         brain,
         heart,
@@ -15,7 +15,7 @@ namespace Andrich
     [CreateAssetMenu(fileName = "Collectible Settings", menuName = "Create Collectible Settings")]
     public class CollectibleSettings : ScriptableObject
     {
-        public WhichCollectible m_WhichItem;
+        public WhichItem m_WhichItem;
         public int m_PointsAmount = 100;
         public int m_HealAmount = 1;
         public int m_DamageAmount = 1;

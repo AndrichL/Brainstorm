@@ -26,7 +26,6 @@ namespace Andrich
             m_IsDead = false;
             m_Health = m_MaxHealth;
             GameManager.m_Instance.CurrentPlayer(gameObject);
-            Sjoerd.AudioManager.thisAudioManager.Play("Walk");
         }
 
         public void ChangePlayerVitality(float amount)
@@ -39,8 +38,8 @@ namespace Andrich
                     return;
                 }
 
-                // Player has been hit
                 Sjoerd.AudioManager.thisAudioManager.Play("Grunt");
+
                 if(m_Health > 1)
                 {
                     StartCoroutine(GiveInvincibility(m_TimeInvincible));

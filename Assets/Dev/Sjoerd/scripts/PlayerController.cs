@@ -30,11 +30,11 @@ namespace Sjoerd
         {
             if(movementInfo != Vector2.zero)
             {
-                Sjoerd.AudioManager.thisAudioManager.UnPause("Footsteps");
+                AudioManager.thisAudioManager.UnPause("Footsteps");
             }
             else
             {
-                Sjoerd.AudioManager.thisAudioManager.Pause("Footsteps");
+                AudioManager.thisAudioManager.Pause("Footsteps");
             }
         }
 

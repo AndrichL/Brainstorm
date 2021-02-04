@@ -25,9 +25,9 @@ namespace Andrich
 
         private void Update()
         {
-            if(m_Settings.m_WhichItem == WhichCollectible.anvil)
+            if(m_Settings.m_WhichItem == WhichItem.anvil)
             {
-                if(m_Rigidbody.position.y < -2.9f)
+                if(transform.position.y < -2.9f)
                 {
                     Sjoerd.AudioManager.thisAudioManager.Play("Anvil");
                     m_Animator.SetBool("HitGround", true);
@@ -57,20 +57,20 @@ namespace Andrich
                 {
                     switch (m_Settings.m_WhichItem)
                     {
-                        case WhichCollectible.brain:
+                        case WhichItem.brain:
                             Sjoerd.AudioManager.thisAudioManager.Play("Catch");
 
                             gameObject.SetActive(false);
 
                             break;
-                        case WhichCollectible.heart:
+                        case WhichItem.heart:
 
                             player.ChangePlayerVitality(m_Settings.m_HealAmount);
                             Sjoerd.AudioManager.thisAudioManager.Play("1up");
                             gameObject.SetActive(false);
 
                             break;
-                        case WhichCollectible.anvil:
+                        case WhichItem.anvil:
 
                             HurtPlayer(player);
 
@@ -87,22 +87,12 @@ namespace Andrich
                 {
                     m_Animator.SetBool("HitGround", true);
 
-                    switch (m_Settings.m_WhichItem)
+                    if(m_Settings.m_WhichItem == WhichItem.brain)
                     {
-                        case WhichCollectible.brain:
-                            Sjoerd.AudioManager.thisAudioManager.Play("Drop");
-
-                            HurtPlayer(player);
-
-                            break;
-                        case WhichCollectible.heart:
-
-                            Sjoerd.AudioManager.thisAudioManager.Play("Drop");
-
-                            break;
-                        default:
-                            break;
+                        HurtPlayer(player);
                     }
+
+                    Sjoerd.AudioManager.thisAudioManager.Play("Drop");
 
                     m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
                     GameManager.m_Instance.DeactivateItem(gameObject, m_Settings.m_AnimationLength);
@@ -124,8 +114,6 @@ namespace Andrich
                     return;
                 }
             }
-
-            Sjoerd.AudioManager.thisAudioManager.Play("Grunt");
 
             player.ChangePlayerVitality(-m_Settings.m_DamageAmount);
         }

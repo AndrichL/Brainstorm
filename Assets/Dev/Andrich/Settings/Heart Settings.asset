@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345bea369bc82644dad625b2e8788df2, type: 3}
   m_Name: Heart Settings
   m_EditorClassIdentifier: 
-  m_WhichItem: 0
+  m_WhichItem: 1
   m_PointsAmount: 50
   m_HealAmount: 1
   m_DamageAmount: 0
