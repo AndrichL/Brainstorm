@@ -118,7 +118,8 @@ namespace Robin
         
         public void StartGame()
         {
-            SceneManager.LoadScene(1);
+            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
+            SceneManager.LoadScene("Game");
         }
 
         public void QuitGame()
@@ -133,7 +134,7 @@ namespace Robin
 
         public void BackToMainMenu()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Menu");
         }
 
         private void OnGameStateChange(GameStateManager.GameState newState)
