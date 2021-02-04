@@ -11,7 +11,17 @@ namespace Robin
 
         private int currentScore;
         public int CurrentScore => currentScore;
-        
+
+        private void OnEnable()
+        {
+            EventManager.instance.onDeathAnimationFinished += OnPlayerDeath;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.instance.onDeathAnimationFinished -= OnPlayerDeath;
+        }
+
         private void Awake()
         {
             if (instance == null)
@@ -30,6 +40,11 @@ namespace Robin
         {
             currentScore = 0;
             EventManager.instance.BroadcastOnScoreUpdate(currentScore);
+        }
+
+        private void OnPlayerDeath()
+        {
+            Highscore.instance.NewScore(currentScore);
         }
     }
 }
