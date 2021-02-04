@@ -8,7 +8,6 @@ namespace Sjoerd
     {
         public Sound[] sounds;
 
-
         public static AudioManager thisAudioManager;
         private void Awake()
         {
@@ -33,6 +32,8 @@ namespace Sjoerd
             }
         }
 
+
+        //start to play audio
         public void Play(string name)
         {
             Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -47,6 +48,7 @@ namespace Sjoerd
             }
         }
 
+        //stop the audio
         public void Stop(string name)
         {
             Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -61,6 +63,7 @@ namespace Sjoerd
             }
         }
 
+        //pause the audio
         public void Pause(string name)
         {
             Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -75,6 +78,7 @@ namespace Sjoerd
             }
         }
 
+        //unpause the audio
         public void UnPause(string name)
         {
             Sound s = Array.Find(sounds, sound => sound.name == name);

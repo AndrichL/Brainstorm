@@ -10,12 +10,14 @@ namespace Andrich
         [SerializeField] private CollectibleSettings m_Settings;
         private Animator m_Animator;
         private Rigidbody2D m_Rigidbody;
+        private Sjoerd.AudioManager AudioManager;
         private bool m_AllowCollision;
 
         private void Awake()
         {
             m_Animator = GetComponent<Animator>();
             m_Rigidbody = GetComponent<Rigidbody2D>();
+            AudioManager = FindObjectOfType<Sjoerd.AudioManager>();
         }
 
         private void OnEnable()
@@ -29,7 +31,7 @@ namespace Andrich
             {
                 if(m_Rigidbody.position.y < -3.1f)
                 {
-                    // Play anvil hit gorund noise
+                    AudioManager.Play("Anvil");
                     m_Animator.SetBool("HitGround", true);
                     m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
                     GameManager.m_Instance.DeactivateItem(gameObject, m_Settings.m_AnimationLength);
@@ -57,15 +59,13 @@ namespace Andrich
                     switch (m_Settings.m_WhichItem)
                     {
                         case WhichCollectible.brain:
-                            // Play player collected brian effect
-                            // Play player collected brian sound
+                            AudioManager.Play("Catch");
 
                             gameObject.SetActive(false);
 
                             break;
                         case WhichCollectible.heart:
-                            // Play player collected heart effect
-                            // Play player collected heart sound
+                            AudioManager.Play("1up");
 
                             player.ChangePlayerVitality(m_Settings.m_HealAmount);
                             gameObject.SetActive(false);
@@ -91,14 +91,14 @@ namespace Andrich
                     switch (m_Settings.m_WhichItem)
                     {
                         case WhichCollectible.brain:
-                            // Play brain hits ground sound
+                            AudioManager.Play("Drop");
 
                             HurtPlayer(player);
 
                             break;
                         case WhichCollectible.heart:
 
-                            // Play heart hits ground sound
+                            AudioManager.Play("Drop");
 
                             break;
                         default:
@@ -126,7 +126,7 @@ namespace Andrich
                 }
             }
 
-            // Play player hurt sound
+            AudioManager.Play("Grunt");
 
             player.ChangePlayerVitality(-m_Settings.m_DamageAmount);
         }
