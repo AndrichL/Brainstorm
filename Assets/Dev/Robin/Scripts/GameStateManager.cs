@@ -24,10 +24,11 @@ namespace Robin
         
         private void Awake()
         {
+            DontDestroyOnLoad(this.gameObject);
             if (instance == null)
                 instance = this;
             else
-                Destroy(this);
+                Destroy(this.gameObject);
         }
 
         public Action<GameState> onChangeGameState;
