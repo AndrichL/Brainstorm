@@ -115,8 +115,6 @@ namespace Robin
 
             GameStateManager.instance.ChangeGameState(GameStateManager.instance.LastGameState);
 
-            Debug.Log(GameStateManager.instance.LastGameState);
-
             Sjoerd.AudioManager.thisAudioManager.Play("Button");
             Sjoerd.AudioManager.thisAudioManager.UnPause("OST");
 
@@ -168,7 +166,11 @@ namespace Robin
 
         public void Restart()
         {
+
             Sjoerd.AudioManager.thisAudioManager.Play("Button");
+
+            //GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
+            CloseAllMenus();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
