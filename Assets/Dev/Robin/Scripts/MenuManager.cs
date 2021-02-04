@@ -118,6 +118,7 @@ namespace Robin
         
         public void StartGame()
         {
+            GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameLoop);
             SceneManager.LoadScene("Game");
         }
 
