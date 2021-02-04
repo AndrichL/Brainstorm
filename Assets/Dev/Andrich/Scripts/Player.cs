@@ -14,12 +14,10 @@ namespace Andrich
         [SerializeField] private float m_TimeInvincible = 0.6f;
         private bool m_IsInvincible;
 
-        private Animator m_Animator;
         private SpriteRenderer m_SpriteRenderer;
 
         private void Awake()
         {
-            m_Animator = GetComponent<Animator>();
             m_SpriteRenderer = GetComponent<SpriteRenderer>();
         }
 
