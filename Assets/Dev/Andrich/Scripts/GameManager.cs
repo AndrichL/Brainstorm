@@ -50,8 +50,8 @@ namespace Andrich
         {
             Time.timeScale = 0f;
             GameStateManager.instance.ChangeGameState(GameStateManager.GameState.GameOver);
-            //Debug.Log("Game is over!");
-            
+            Sjoerd.AudioManager.thisAudioManager.Play("Death");
+
             StartCoroutine(GameOver(player));
         }
 

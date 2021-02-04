@@ -30,9 +30,12 @@ namespace Andrich
                 if(transform.position.y < -2.9f)
                 {
                     Sjoerd.AudioManager.thisAudioManager.Play("Anvil");
+
                     m_Animator.SetBool("HitGround", true);
                     m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
                     GameManager.m_Instance.DeactivateItem(gameObject, m_Settings.m_AnimationLength);
+
+                    m_AllowCollision = false;
                 }
             }
         }
@@ -65,8 +68,8 @@ namespace Andrich
                             break;
                         case WhichItem.heart:
 
-                            player.ChangePlayerVitality(m_Settings.m_HealAmount);
                             Sjoerd.AudioManager.thisAudioManager.Play("1up");
+                            player.ChangePlayerVitality(m_Settings.m_HealAmount);
                             gameObject.SetActive(false);
 
                             break;
@@ -85,17 +88,20 @@ namespace Andrich
 
                 if(ground)
                 {
-                    m_Animator.SetBool("HitGround", true);
-
-                    if(m_Settings.m_WhichItem == WhichItem.brain)
+                    if(m_Settings.m_WhichItem == WhichItem.brain || m_Settings.m_WhichItem == WhichItem.heart)
                     {
-                        HurtPlayer(player);
+                        m_Animator.SetBool("HitGround", true);
+
+                        Sjoerd.AudioManager.thisAudioManager.Play("Drop");
+                        m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
+                        GameManager.m_Instance.DeactivateItem(gameObject, m_Settings.m_AnimationLength);
+
+                        if(m_Settings.m_WhichItem == WhichItem.brain)
+                        {
+                            HurtPlayer(player);
+
+                        }
                     }
-
-                    Sjoerd.AudioManager.thisAudioManager.Play("Drop");
-
-                    m_Rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
-                    GameManager.m_Instance.DeactivateItem(gameObject, m_Settings.m_AnimationLength);
                 }
             }
 
