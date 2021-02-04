@@ -119,6 +119,15 @@ namespace Robin
             highscoreMenu.SetActive(false);
         }
         
+        public void ShowHighscoreMenu()
+        {
+            mainMenu.SetActive(false);
+            optionsMenu.SetActive(false);
+            gameOverMenu.SetActive(false);
+            pauseMenu.SetActive(false);
+            highscoreMenu.SetActive(true);
+        }
+        
         public void StartGame()
         {
             Sjoerd.AudioManager.thisAudioManager.Stop("MenuOST");
