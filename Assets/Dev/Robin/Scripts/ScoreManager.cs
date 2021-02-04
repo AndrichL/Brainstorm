@@ -44,7 +44,7 @@ namespace Robin
 
         private void OnPlayerDeath()
         {
-            Highscore.instance.NewScore(currentScore);
+            PlayerPrefs.SetInt("Score6", currentScore);
         }
     }
 }

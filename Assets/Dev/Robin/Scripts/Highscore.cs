@@ -18,7 +18,18 @@ namespace Robin
 
         private void OnEnable()
         {
+            //ResetScore();
+            CalculateScoreOrder();
             GetSavedHighscore();
+        }
+
+        private void ResetScore()
+        {
+            PlayerPrefs.DeleteKey("Score1");
+            PlayerPrefs.DeleteKey("Score2");
+            PlayerPrefs.DeleteKey("Score3");
+            PlayerPrefs.DeleteKey("Score4");
+            PlayerPrefs.DeleteKey("Score5");
         }
 
         private void Awake()
@@ -39,20 +50,20 @@ namespace Robin
             score5.text = PlayerPrefs.GetInt("Score5", 2000).ToString();
         }
 
-        public void NewScore(int newScore)
+        public void CalculateScoreOrder()
         {
             List<int> tempScoreList = new List<int>();
             
             tempScoreList.Add(PlayerPrefs.GetInt("Score1", 10000));
-            tempScoreList.Add(PlayerPrefs.GetInt("Score2", 10000)); 
-            tempScoreList.Add(PlayerPrefs.GetInt("Score3", 10000)); 
-            tempScoreList.Add(PlayerPrefs.GetInt("Score4", 10000)); 
-            tempScoreList.Add(PlayerPrefs.GetInt("Score5", 10000)); 
-            tempScoreList.Add(newScore);
+            tempScoreList.Add(PlayerPrefs.GetInt("Score2", 8000)); 
+            tempScoreList.Add(PlayerPrefs.GetInt("Score3", 6000)); 
+            tempScoreList.Add(PlayerPrefs.GetInt("Score4", 4000)); 
+            tempScoreList.Add(PlayerPrefs.GetInt("Score5", 2000)); 
+            tempScoreList.Add(PlayerPrefs.GetInt("Score6", 0));
             
             tempScoreList.Sort();
 
-            for (int i = 0; i < tempScoreList.Count; i++)
+            for (int i = 0; i < tempScoreList.Count -1; i++)
             {
                 PlayerPrefs.SetInt("Score" + (tempScoreList.Count - i), tempScoreList[i]);
             }
