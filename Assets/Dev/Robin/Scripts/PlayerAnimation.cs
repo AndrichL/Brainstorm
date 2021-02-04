@@ -20,6 +20,7 @@ namespace Robin
 
         public bool RightDirection
         {
+            get { return _rightDirection;}
             set
             {
                 _spriteRenderer.flipX = value;

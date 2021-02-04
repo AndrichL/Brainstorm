@@ -1,18 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sjoerd;
 using UnityEngine;
 
-public class PlayerShadowSwitcher : MonoBehaviour
+namespace Robin
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerShadowSwitcher : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private PlayerAnimation _playerAnimation;
+        [SerializeField] private GameObject leftShadow;
+        [SerializeField] private GameObject rightShadow;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            _playerAnimation = GetComponent<PlayerAnimation>();
+        }
+
+        private void Update()
+        {
+            if (_playerAnimation.RightDirection)
+            {
+                leftShadow.SetActive(false);
+                rightShadow.SetActive(true);
+            }
+            else
+            {
+                leftShadow.SetActive(true);
+                rightShadow.SetActive(false);
+            }
+        }
     }
 }
+
